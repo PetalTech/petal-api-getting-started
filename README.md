@@ -17,4 +17,4 @@ See each respective language example sub-folder for a README on installation.
 
 ## Documentation
 
-For more information about each of the available preprocessing and EEG metrics API calls, see here (TODO: link).
+For more information about each of the available preprocessing and EEG metrics API calls, see here: https://docs.petal.tech
