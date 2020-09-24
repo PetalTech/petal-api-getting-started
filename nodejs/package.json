@@ -1,0 +1,17 @@
+{
+  "name": "petal_getting_started",
+  "version": "1.0.0",
+  "description": "Example scripts for testing EEG streams and Petal API calls",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^6.1.0",
+    "csvtojson": "^2.0.10",
+    "firebase": "^7.20.0",
+    "node-lsl": "git+https://github.com/CalvinLeather/node-lsl.git",
+    "request": "^2.88.2"
+  }
+}
