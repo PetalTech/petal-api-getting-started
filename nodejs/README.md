@@ -29,33 +29,15 @@ There is a single endpoint used to access the metrics API. The `api.js` file con
 
 This file provides a function to make Petal Metrics API calls.
 
-### api_all_metrics.js
+### api_standalone.js
 
-This script contains an example of a Petal Metrics API call for all metrics at once. You will need a valid developer API key to access.
+This script contains an example of a Petal Metrics API call without connecting to any active LSL streams. You will need a valid developer API key to access.
 
-Usage: node api_all_metrics.js -k $API_KEY
-
-### api_artifacts.js
-
-This script contains an example of checking channels for artifacts in a Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: node api_artifacts.js -k $API_KEY
-
-### api_bandpower.js
-
-This script contains an example of a bandpower Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: `node api_bandpower.js -k $API_KEY`
-
-### api_preprocess.js
-
-This script contains an example of a preprocessed EEG data Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: `node api_preprocess.js -k $API_KEY`
+Usage: node api_standalone.js -k $API_KEY
 
 ### api_lsl_call_loop.js
 
-This script demonstrates how to receive an LSL stream and call the Petal API in an endless loop. It currently gets bandpower and artifacts and logs to console.
+This script demonstrates how to receive an LSL stream and call the Petal API in an endless loop.
 
 Usage: `node api_lsl_call_loop.js -n SimulatedEEGStream -k $API_KEY`
 

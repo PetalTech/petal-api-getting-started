@@ -36,33 +36,15 @@ There is a single endpoint used to access the metrics API. The `api.py` file con
 
 This file provides a function to make Petal Metrics API calls.
 
-### api_all_metrics.py
+### api_standalone.py
 
-This script contains an example of a Petal Metrics API call for all metrics at once. You will need a valid developer API key to access.
+This script contains an example of a Petal Metrics API call without connecting to any active LSL streams. You will need a valid developer API key to access.
 
-Usage: python api_all_metrics.py -k $API_KEY
-
-### api_artifacts.py
-
-This script contains an example of checking channels for artifacts in a Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: python api_artifacts.py -k $API_KEY
-
-### api_bandpower.py
-
-This script contains an example of a bandpower Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: `python api_bandpower.py -k $API_KEY`
-
-### api_preprocess.py
-
-This script contains an example of a preprocessed data Petal Metrics API call. You will need a valid developer API key to access.
-
-Usage: `python api_preprocess.py -k $API_KEY`
+Usage: python api_standalone.py -k $API_KEY
 
 ### api_lsl_call_loop.py
 
-This script demonstrates how to receive an LSL stream and call the Petal API in an endless loop. It currently gets bandpower and artifacts and logs to console.
+This script demonstrates how to receive an LSL stream and call the Petal API in an endless loop.
 
 Usage: `python api_lsl_call_loop.py -n SimulatedEEGStream -k $API_KEY`
 

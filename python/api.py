@@ -8,7 +8,7 @@ import random
 import requests
 
 
-METRICS_URL = 'https://app.petal.dev/api/v1/metrics'
+API_HOST = 'https://app.petal.dev'
 
 
 def request_metrics(
@@ -32,28 +32,20 @@ def request_metrics(
            - preprocessed_data: data
     '''
     args = {
-        'nperseg': 25,
-        'nfft': 75,
-        'sample_rate': 256,
-        'filter_multiplier': 8,
-        'filter_order': 2,
-        'bandpass_lowcut': 0.01,
-        'bandpass_highcut': 30,
-        'lowpass_cutoff': 30,
-        'highpass_cutoff': .01,
-        'normalize_mode': 'by_channel',
-        'band_ranges': {
-            'alpha': [8, 13],
-            'beta': [13, 30],	
-            'delta': [1, 3],
-            'theta': [3, 8]
-        },
-        'metrics': metrics,
-        'preprocess_steps' : ['bandpass','interpolate_data'],
+      'band_ranges': {
+        'alpha': [8, 13],
+        'beta': [13, 30],	
+        'delta': [1, 3],
+        'theta': [3, 8]
+      },
+      'metrics': metrics,
+      'preprocess_steps': [],
     }
     data = {'data': eeg_data, 'options' : args}
-    headers = { 'X-API-KEY': api_key }
-    resp = requests.post(METRICS_URL, json=data, headers=headers)
+    headers = { 'Authorization': f'Bearer {api_key}' }
+    base_url = f'{API_HOST}/api/v1'
+    call_url = f'{base_url}/app/metrics'
+    resp = requests.post(call_url, json=data, headers=headers)
     print(f'status: {resp.status_code}')
     try:
         resp_json = resp.json()
