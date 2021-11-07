@@ -2,7 +2,7 @@
 This script demonstrates how to receive an LSL stream and call the Petal API in
 an endless loop. It currently gets bandpower and artifacts and logs to console.
 
-Usage: python api_lsl_call_loop.py -n SimulatedEEGStream -k $API_KEY
+Usage: python api_lsl_call_loop.py -n PetalStream_eeg -k $API_KEY
 '''
 import argparse
 import pprint
@@ -41,6 +41,6 @@ while True:
     calculations = api.request_metrics(
         api_key=args.api_key,
         eeg_data=eeg_data,
-        metrics=['bandpower', 'artifact_count'],
+        metrics=['eye', 'blink', 'bandpower', 'artifact_detect'],
     )
     pprint.pprint(calculations)
